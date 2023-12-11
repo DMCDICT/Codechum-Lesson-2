@@ -1,0 +1,292 @@
+ITEM 1
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        //SRC Carlos Tabacon
+        // Initializing a multidimensional array
+        int[,] multiArray = {
+            {1, 2, 3, 4},
+            {3, 5, 7, 9}
+        };
+
+        // Printing elements row by row
+        for (int row = 0; row < multiArray.GetLength(0); row++)
+        {
+            for (int col = 0; col < multiArray.GetLength(1); col++)
+            {
+                Console.Write(multiArray[row, col]);
+
+                // Add a comma and space after each element (except the last one)
+                if (col < multiArray.GetLength(1) - 1)
+                {
+                    Console.Write(", ");
+                }
+            }
+
+            // Move to the next line after printing each row
+            Console.WriteLine();
+        }
+    }
+}
+
+ITEM 2
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        //SRC Carlos Tabacon
+        Console.Write("Enter number of rows: ");
+        int rows = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter number of columns: ");
+        int columns = int.Parse(Console.ReadLine());
+
+        // Create a multidimensional array
+        int[,] multiArray = new int[rows, columns];
+
+        // Input elements
+        for (int row = 0; row < rows; row++)
+        {
+            for (int col = 0; col < columns; col++)
+            {
+                Console.Write($"Enter element at row {row}, column {col}: ");
+                multiArray[row, col] = int.Parse(Console.ReadLine());
+            }
+        }
+
+        // Print elements in reverse order
+        for (int row = rows - 1; row >= 0; row--)
+        {
+            for (int col = columns - 1; col >= 0; col--)
+            {
+                Console.Write($"{multiArray[row, col]}\t");
+            }
+            Console.WriteLine(); // Move to the next line after each row
+        }
+    }
+}
+
+ITEM 3
+
+using System;
+
+class Program {
+    //SRC Bing or MS CoPilot
+    static void Main(string[] args) {
+        Console.Write("Enter number of rows: ");
+        int rows = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter number of columns: ");
+        int cols = Convert.ToInt32(Console.ReadLine());
+
+        int[,] arr = new int[rows, cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                Console.Write("Enter element at row {0}, column {1}: ", i, j);
+                arr[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+
+        Console.Write("Enter x: ");
+        int x = Convert.ToInt32(Console.ReadLine());
+
+        bool found = false;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (arr[i, j] == x) {
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if (found) {
+            Console.WriteLine("Found!");
+        } else {
+            Console.WriteLine("Sorry, {0} not found.", x);
+        }
+    }
+}
+
+ITEM 4
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        //SRC Carlos Tabacon
+        Console.Write("Enter number of rows: ");
+        int rows = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter number of columns: ");
+        int columns = int.Parse(Console.ReadLine());
+
+        // Create a multidimensional array
+        int[,] multiArray = new int[rows, columns];
+
+        // Input elements
+        for (int row = 0; row < rows; row++)
+        {
+            for (int col = 0; col < columns; col++)
+            {
+                Console.Write($"Enter element at row {row}, column {col}: ");
+                multiArray[row, col] = int.Parse(Console.ReadLine());
+            }
+        }
+
+        // Print numbers divisible by 3
+        Console.Write("Divisible by 3: ");
+        bool divisibleBy3Exists = false;
+        for (int row = 0; row < rows; row++)
+        {
+            for (int col = 0; col < columns; col++)
+            {
+                if (multiArray[row, col] % 3 == 0)
+                {
+                    if (divisibleBy3Exists)
+                    {
+                        Console.Write(", ");
+                    }
+                    Console.Write($"{multiArray[row, col]}");
+                    divisibleBy3Exists = true;
+                }
+            }
+        }
+        Console.WriteLine(); // Move to the next line after printing numbers divisible by 3
+
+        // Print numbers divisible by 5
+        Console.Write("Divisible by 5: ");
+        bool divisibleBy5Exists = false;
+        for (int row = 0; row < rows; row++)
+        {
+            for (int col = 0; col < columns; col++)
+            {
+                if (multiArray[row, col] % 5 == 0)
+                {
+                    if (divisibleBy5Exists)
+                    {
+                        Console.Write(", ");
+                    }
+                    Console.Write($"{multiArray[row, col]}");
+                    divisibleBy5Exists = true;
+                }
+            }
+        }
+        Console.WriteLine(); // Move to the next line after printing numbers divisible by 5
+    }
+}
+
+ITEM 5
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        //SRC Carlos Tabacon
+        Console.Write("Enter number of rows: ");
+        int rows = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter number of columns: ");
+        int columns = int.Parse(Console.ReadLine());
+
+        // Create a multidimensional array
+        int[,] multiArray = new int[rows, columns];
+
+        // Input elements
+        for (int row = 0; row < rows; row++)
+        {
+            for (int col = 0; col < columns; col++)
+            {
+                Console.Write($"Enter element at row {row}, column {col}: ");
+                multiArray[row, col] = int.Parse(Console.ReadLine());
+            }
+        }
+        //prints the output
+        //calls the class name of the contructor
+        TransposeAndPrintArray(multiArray);
+
+        
+    }
+
+    static void PrintArray(int[,] array)
+    {
+        for (int row = 0; row < array.GetLength(0); row++)
+        {
+            for (int col = 0; col < array.GetLength(1); col++)
+            {
+                Console.Write($"{array[row, col]} ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    static void TransposeAndPrintArray(int[,] array)
+    {
+        for (int col = 0; col < array.GetLength(1); col++)
+        {
+            for (int row = 0; row < array.GetLength(0); row++)
+            {
+                Console.Write($"{array[row, col]} ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+ITEM 6
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        //SRC Carlos Tabacon
+        Console.Write("Enter number of rows: ");
+        int rows = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter number of columns: ");
+        int columns = int.Parse(Console.ReadLine());
+
+        // Create a multidimensional array
+        int[,] multiArray = new int[rows, columns];
+
+        // Input elements
+        for (int row = 0; row < rows; row++)
+        {
+            for (int col = 0; col < columns; col++)
+            {
+                Console.Write($"Enter element at row {row}, column {col}: ");
+                multiArray[row, col] = int.Parse(Console.ReadLine());
+            }
+        }
+
+        // Find and print the largest element
+        int largest = multiArray[0, 0];
+
+        for (int row = 0; row < multiArray.GetLength(0); row++)
+        {
+            for (int col = 0; col < multiArray.GetLength(1); col++)
+            {
+                if (multiArray[row, col] > largest)
+                {
+                    largest = multiArray[row, col];
+                }
+            }
+        }
+
+        Console.WriteLine($"Largest: {largest}");
+    }
+}
