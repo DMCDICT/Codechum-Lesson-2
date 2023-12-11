@@ -1,0 +1,185 @@
+ITEM 1
+
+using System;
+
+class Program
+{
+    //SRC Carlos Tabacon
+    static void Main()
+    {
+        // Initializing an array with 0 to 3 elements
+        int[] myArray = { 30, 2, 32, 812 };
+
+        // 
+        int sum = myArray[0];
+
+        // Printing the sum
+        Console.WriteLine(sum);
+    }
+}
+
+ITEM 2
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        //SRC Carlos Tabacon
+        Console.Write("Enter array size: ");
+        int size = int.Parse(Console.ReadLine());
+
+        // Create an array based on user input
+        int[] myArray = new int[size];
+        Console.WriteLine("Enter elements of the array:");
+
+        for (int i = 0; i < size; i++)
+        {//the for loop repeats the the array size untill it's full
+            myArray[i] = int.Parse(Console.ReadLine());
+        }
+
+        Console.Write("Enter an index: ");
+        int index = int.Parse(Console.ReadLine());
+
+        // Check if the index is valid
+        if (index >= 0 && index < size)
+        {
+            // Print the element at the specified index
+            Console.WriteLine(myArray[index]);
+        }
+        else
+        {
+            Console.WriteLine("Invalid index.");
+        }
+    }
+}
+
+ITEM 3
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        //SRC Carlos Tabacon
+        Console.Write("Enter array size: ");
+        int size = int.Parse(Console.ReadLine());
+
+        // Create an array based on user input
+        int[] myArray = new int[size];
+        Console.WriteLine("Enter elements of the array:");
+
+        for (int i = 0; i < size; i++)
+        {
+            myArray[i] = int.Parse(Console.ReadLine());
+        }
+
+        // Print the last element of the array
+        if (size > 0)
+        {
+            Console.WriteLine(myArray[size - 1]);
+        }
+        else
+        {
+            Console.WriteLine("Array is empty.");
+        }
+    }
+}
+
+ITEM 4
+
+using System;
+
+class MainClass {
+
+    static public void Main()
+    {
+        //SRC Carlos Tabacon
+        float[] numArr = {3.14f, 9.2f, 8.812f, 10.5f, 0.4f, -23.23f, -1.56f, 12.3f, 9.45f, -0.968f};
+        
+        // Hey there, start typing your C# code here...
+
+         float product = numArr[0] * numArr[4];
+
+        // Print the product with 2 decimal places
+        Console.WriteLine(product.ToString("F2"));
+    }
+}
+
+ITEM 5
+
+using System;
+
+class MainClass {
+    static public void Main() {
+
+        // SRC Carlos Tabacon
+        // Input for the first array
+        Console.Write("Enter size of the first array: ");
+        int size1 = int.Parse(Console.ReadLine());
+
+        int[] firstArray = new int[size1];
+        Console.WriteLine("Enter elements of the first array:");
+
+        for (int i = 0; i < size1; i++) {
+            firstArray[i] = int.Parse(Console.ReadLine());
+        }
+
+        // Input for the second array
+        Console.Write("Enter size of the second array: ");
+        int size2 = int.Parse(Console.ReadLine());
+
+        int[] secondArray = new int[size2];
+        Console.WriteLine("Enter elements of the second array:");
+
+        for (int i = 0; i < size2; i++) {
+            secondArray[i] = int.Parse(Console.ReadLine());
+        }
+
+        // Calculate and print the specified sums and products
+        int sum = firstArray[0] + secondArray[size2 - 1];
+        int product = firstArray[1] * secondArray[size2 - 2];
+
+        // Print the results
+        Console.WriteLine($"sum of first and last: {sum}");
+        Console.WriteLine($"product of second and second to the last: {product}");
+    }
+}
+
+ITEM 6
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        //SRC Carlos Tabacon
+        Console.Write("Enter array size: ");
+        int size = int.Parse(Console.ReadLine());
+
+        int[] array = new int[size];
+
+        Console.WriteLine("Enter elements of the array:");
+        for (int i = 0; i < size; i++)
+        {
+            array[i] = int.Parse(Console.ReadLine());
+        }
+
+        if (size % 2 == 1)
+        {
+            // Odd-sized array
+            int middleIndex = size / 2;
+            Console.WriteLine($"{array[middleIndex]}");
+        }
+        else
+        {
+            // Even-sized array
+            int middleIndex1 = size / 2 - 1;
+            int middleIndex2 = size / 2;
+            Console.WriteLine($"{array[middleIndex1]} and {array[middleIndex2]}");
+        }
+    }
+}
