@@ -1,0 +1,215 @@
+ITEM 1
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        //SRC Carlos Tabacon
+        Console.Write("Enter the size of the array: ");
+        int size = int.Parse(Console.ReadLine());
+
+        // Check if the size is valid (non-negative)
+        while (size <= 0)
+        {
+            Console.WriteLine("Please enter a valid, non-negative size.");
+            Console.Write("Enter the size of the array: ");
+            size = int.Parse(Console.ReadLine());
+        }
+
+        int[] array = new int[size];
+
+        for (int i = 0; i < size; i++)
+        {
+            Console.Write($"Enter element #{i + 1}: ");
+            array[i] = int.Parse(Console.ReadLine());
+        }
+
+      
+        Console.WriteLine(string.Join(", ", array));
+    }
+}
+
+ITEM 2
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        //SRC Carlos Tabacon
+        Console.Write("Enter the size of the arrays: ");
+        int size = int.Parse(Console.ReadLine());
+
+        // Check if the size is valid (non-negative)
+        while (size <= 0)
+        {
+            Console.WriteLine("Please enter a valid, non-negative size.");
+            Console.Write("Enter the size of the arrays: ");
+            size = int.Parse(Console.ReadLine());
+        }
+
+        int[] array1 = new int[size];
+        int[] array2 = new int[size];
+        int[] sumArray = new int[size];
+
+        Console.WriteLine("Enter the elements of the first array:");
+        for (int i = 0; i < size; i++)
+        {
+            Console.Write($"Enter element #{i + 1}: ");
+            array1[i] = int.Parse(Console.ReadLine());
+        }
+
+        Console.WriteLine("Enter the elements of the second array:");
+        for (int i = 0; i < size; i++)
+        {
+            Console.Write($"Enter element #{i + 1}: ");
+            array2[i] = int.Parse(Console.ReadLine());
+        }
+
+       
+        for (int i = 0; i < size; i++)
+        {
+            sumArray[i] = array1[i] + array2[i];
+            Console.WriteLine($"{array1[i]} + {array2[i]} = {sumArray[i]}");
+        }
+    }
+}
+
+ITEM 3
+
+using System;
+
+class Program {
+    static void Main(string[] args) {
+        //SRC Bing or MS CoPilot
+        Console.Write("Enter the size of the array: ");
+        int size = Convert.ToInt32(Console.ReadLine());
+
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < size; i++) {
+            Console.Write("Enter element #{0}: ", i + 1);
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        Console.Write("Enter a value to search for: ");
+        int x = Convert.ToInt32(Console.ReadLine());
+
+        bool found = false;
+        for (int i = 0; i < size; i++) {
+            if (arr[i] == x) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            Console.WriteLine("Found!");
+        } else {
+            Console.WriteLine("Sorry, {0} not found.", x);
+        }
+    }
+}
+
+ITEM 4
+
+using System;
+
+class Program {
+    static void Main(string[] args) {
+        //SRC Bing or MS CoPilot
+        Console.Write("Enter the size of the array: ");
+        int size = Convert.ToInt32(Console.ReadLine());
+
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < size; i++) {
+            Console.Write("Enter element #{0}: ", i + 1);
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        Array.Reverse(arr);
+
+        Console.Write(string.Join(", ", arr));
+    }
+}
+
+ITEM 5
+
+using System;
+
+class Program {
+    static void Main(string[] args) {
+        //SRC Bing or MS CoPilot
+        Console.Write("Enter the size of the array: ");
+        int n = int.Parse(Console.ReadLine());
+        int[] arr = new int[n];
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            Console.Write("Enter element #{0}: ", i + 1);
+            arr[i] = int.Parse(Console.ReadLine());
+            sum += arr[i];
+        }
+        double average = (double)sum / n;
+        Console.WriteLine("sum: {0}", sum);
+        Console.WriteLine("average: {0:F2}", average);
+    }
+}
+
+ITEM 6
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        //SRC ChatGPT
+        Console.Write("Enter the size of the array: ");
+        int size = Convert.ToInt32(Console.ReadLine());
+        int[] arr = new int[size];
+
+        for (int i = 0; i < size; i++)
+        {
+            Console.Write("Enter element #{0}: ", i + 1);
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        Console.Write("even: ");
+        bool hasEven = false;
+        for (int i = 0; i < size; i++)
+        {
+            if (arr[i] % 2 == 0)
+            {
+                if (hasEven)
+                {
+                    Console.Write(", ");
+                }
+
+                Console.Write("{0}", arr[i]);
+                hasEven = true;
+            }
+        }
+
+        Console.Write("\nodd: ");
+        bool hasOdd = false;
+        for (int i = 0; i < size; i++)
+        {
+            if (arr[i] % 2 != 0)
+            {
+                if (hasOdd)
+                {
+                    Console.Write(", ");
+                }
+
+                Console.Write("{0}", arr[i]);
+                hasOdd = true;
+            }
+        }
+    }
+}
